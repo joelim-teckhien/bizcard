@@ -73,12 +73,13 @@
             justify-content: center;
         }
         .company-logo img {
-            /* PLACEHOLDER: replace src with your rectangular logo in /resources */
-            height: 64px;              /* fixed logo height */
-            max-width: 80%;            /* responsive width cap */
-            object-fit: contain;       /* keep aspect ratio */
+            height: 64px;
+            max-width: 80%;
+            object-fit: contain;
             display: block;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
+            margin: 0 auto 20px auto;
+            border-radius: 12px; /* rounds the edges */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         .profile-section {
@@ -201,7 +202,7 @@
 
         .qr-section { text-align: center; margin: 25px 0 15px 0; }
         .qr-code {
-            width: 100px; height: 100px;
+            width: 180px; height: 180px;
             background: var(--text-white);
             border: 1px solid var(--gold-primary);
             border-radius: 8px;
@@ -212,7 +213,8 @@
             transition: all 0.3s ease;
             overflow: hidden;
         }
-        .qr-code:hover { transform: scale(1.05); box-shadow: 0 4px 12px rgba(184, 134, 11, 0.2); }
+        .qr-code:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(184, 134, 11, 0.2); }
+        
         /* ADDED: real QR image support */
         .qr-code img {
             width: 100%;
@@ -258,8 +260,6 @@
                 <div class="profile-image">
                     <!-- PLACEHOLDER: replace with your profile photo in /resources -->
                     <img src="resources/profile.jpg" alt="Joe Lim profile photo">
-                    <!-- OPTIONAL fallback initials shown under image if it fails to load -->
-                    <div class="profile-initials">JL</div>
                 </div>
                 <h1 class="name">Joe Lim</h1>
                 <p class="role">Managing Director</p>
@@ -355,18 +355,12 @@
             </div>
 
             <div class="qr-section">
-                <div class="qr-code" onclick="showQRInstructions()">
-                    <!-- PLACEHOLDER: use your actual QR PNG in /resources -->
-                    <img src="resources/qr-code.png" alt="QR Code">
-                </div>
-                <p class="qr-label">Scan for Digital Card</p>
-            </div>
-
-            <!-- (Optional help text kept; you can remove if not needed) -->
-            <div class="qr-instructions" id="qrInstructions" style="display: none;">
-                <h4>How to Update Your QR Code:</h4>
-                <p>Replace <code>resources/qr-code.png</code> with your latest QR image.</p>
-            </div>
+                <!-- QR code clickable: opens PNG in new tab or saves -->
+                <a href="resources/qr-code.png" target="_blank" download>
+                    <img src="resources/qr-code.png" alt="QR Code" class="qr-code">
+                </a>
+                <p class="qr-label">Scan or Click to Save QR Code</p>
+            </div>            
 
             <div class="action-buttons">
                 <a href="mailto:sales@teckhien.com" class="btn btn-primary">
