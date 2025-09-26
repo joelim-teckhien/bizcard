@@ -126,7 +126,9 @@
         .name { font-size: 38px; font-weight: 400; color: var(--text-white); margin-bottom: 8px; line-height: 1.1; }
         .role { font-size: 18px; color: rgba(0, 0, 0, 0); font-weight: 400; margin-bottom: 6px; line-height: 1.2; }
         .company { font-size: 16px; color: rgba(255, 255, 255, 0.85); font-weight: 400; margin-bottom: 10px; line-height: 1.3; }
-        .tagline { font-size: 14px; color: var(--gold-dark); font-weight: 400; line-height: 1.3; margin-bottom: 10px; }
+        <!--
+            tagline { font-size: 14px; color: var(--gold-dark); font-weight: 400; line-height: 1.3; margin-bottom: 10px; }
+            --> 
         .services-line { font-size: 12px; color: var(--gold-primary); font-weight: 300; line-height: 1.3; margin-bottom: 30px; letter-spacing: 0.5px; opacity: 0.9; }
 
         .contact-section { display: flex; gap: 24px; max-width: 600px; margin: 0 auto; }
@@ -135,6 +137,16 @@
         .contact-item { display: block; margin-bottom: 10px; color: rgba(255, 255, 255, 0.9); font-size: 13px; line-height: 1.5; }
         .contact-item a { color: rgba(255, 255, 255, 0.9); text-decoration: none; transition: color 0.3s ease; }
         .contact-item a:hover { color: var(--gold-light); }
+        .contact-block .btn {
+            margin-top: 10px;
+            padding: 10px 16px;
+            font-size: 13px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
 
         .content-section { background: var(--section-bg); padding: 50px 60px; }
         .section { margin-bottom: 40px; }
@@ -284,11 +296,31 @@
         }
 
         /* top identity text on white background */
-        .name    { color: var(--text-dark); }
-        .role    { color: var(--text-gray); }              /* was transparent */
-        .company { color: var(--text-dark); }
+        .name {
+            font-size: 32px;       /* larger */
+            font-weight: 700;      /* bold */
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .role {
+            font-size: 18px;       /* medium */
+            font-weight: 500;      /* semi-bold */
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .company {
+            font-size: 16px;       /* smaller */
+            font-weight: 400;      /* normal */
+            color: var(--text-gray); /* grey tone */
+            margin-bottom: 12px;
+        }
+
+        <!--
         .tagline { color: var(--gold-dark); }
-        .services-line { color: var(--text-gray); opacity: 1; }
+            -->
+        .services-line { color: var(--gold-dark); opacity: 1; }
 
         /* contact blocks: text and links should be dark by default */
         .contact-item,
@@ -329,12 +361,14 @@
             <div class="profile-section">
                 <div class="profile-image">
                     <!-- PLACEHOLDER: replace with your profile photo in /resources -->
-                    <img src="resources/profile.jpg" alt="Joe Lim profile photo">
+                    <img src="resources/profile.png" alt="Joe Lim profile photo">
                 </div>
                 <h1 class="name">Joe Lim</h1>
                 <p class="role">Managing Director</p>
                 <p class="company">Teck Hien Engineering Pte Ltd</p>
-                <p class="tagline">Trusted Since 1979 in Engineering Solutions</p>
+                <!--
+                <p class="tagline">Trusted Since 1979 in Engineering Solutions</p> 
+                -->
                 <p class="services-line">Plumbing • Sanitary • Gas • Fire Protection • Civil Works</p>
             </div>
 
@@ -344,6 +378,11 @@
                     <h3>Personal Contact</h3>
                     <div class="contact-item"><a href="tel:+6596329142">+65 9632 9142</a></div>
                     <div class="contact-item"><a href="mailto:joe@teckhien.com">joe@teckhien.com</a></div>
+                    <div class="contact-item">
+                        <a href="resources/joe-lim.vcf" class="btn btn-secondary" download>
+                          <i class="fas fa-address-card"></i> Save Contact
+                        </a>
+                    </div>
                 </div>
                 <div class="contact-block">
                     <h3>Company Details</h3>
@@ -440,6 +479,10 @@
                 <a href="https://teckhien.com" target="_blank" class="btn btn-secondary">
                     <i class="fas fa-external-link-alt"></i>
                     Visit Website
+                </a>
+                <a href="resources/joe-lim.vcf" class="btn btn-primary" download>
+                    <i class="fas fa-address-card"></i>
+                    Save Contact
                 </a>
             </div>
         </div>
